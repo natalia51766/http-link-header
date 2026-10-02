@@ -1,6 +1,6 @@
 {
   "name": "http-link-header",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Parses and serializes the Link header into an array of relation targets with parameters.",
   "type": "module",
   "main": "src/index.js",
