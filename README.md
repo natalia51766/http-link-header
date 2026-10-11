@@ -30,3 +30,10 @@ The trade-off: this is a pure parser/serializer. It does not resolve relative UR
 - Backslash escaping is supported in quoted values on both parse and format.
 - An empty or whitespace-only header returns an empty array.
 - Malformed input (missing `<`, unterminated `>`, unterminated quote) throws a `SyntaxError`.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
